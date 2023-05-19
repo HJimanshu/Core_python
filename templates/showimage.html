@@ -1,0 +1,202 @@
+{% extends "index.html"%}
+
+{% block head %}
+
+<style>
+    .rmimg {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  
+  .ssttiicckkyy{
+      position:sticky;
+      top:0px;
+  }
+  
+      @media screen and (min-width:321px) and (max-width:374px) {
+  
+  
+      .commentbox {
+          height: 202px;
+          overflow: scroll;
+      }
+  
+      }
+  
+    .roundbtn {
+      height: 60px;
+      width: 60px;
+      border-radius: 100%;
+    }
+    .cbi {
+      margin: auto;
+    }
+  
+    .commentbox {
+      height: 202px;
+      margin: auto;
+      overflow: scroll;
+    }
+  
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
+{% endblock %}
+
+{% block body %}
+
+
+<!-- for dyanmic image name -->
+{% set arr = {
+            "etjsxlg44dqbfuudwnhf.jpg":"One Piece",
+            "gpncqqh99wqrfs8ecm4u.jpg":"Future Trunks",
+            "cmul1pctzkfuz6y6jgks.jpg":"Chainsaw Man Vol. 1",
+            "nszcs0fvlhobyxxstza2.jpg":"Ghost",
+            "ua7ddxbeos2efs3mbnw5.jpg":"Ryomen Sukuna",
+            "ow9rwlk2illzbv8fyisb.jpg":"Sukuna",
+            "hdu0bxkfojwj2adrgwz9.jpg":"Luffy Shanks ",
+            "iabigseptso04nidbhcs.jpg":"Alucard Gloves",
+            "dwqzypswjb3eqcn3sexh.jpg":"Berserk",
+            "ssywhtcs5qwe2fkpur61.gif":"ClickOnBuy",
+            "ywbs9p6qv7lhmix7vwbq.jpg":"Purple pattern ",
+            "u51fufukydvoxmxzxm1o.jpg":"Haikyuu WIN",
+            "kjs9rd8vyicf7fverm06.jpg":"Death Note",
+            "tii1ku2eh192s0tdbmv8.jpg":"Team Aki",
+            "pnybzaiij7wpgf3ipxg1.jpg":"Sakurajima Mai",
+            "nbvvf4eflb8p6ojbflh2.jpg":"HAIKYUU!!",
+            "n2tp0wpv5q7tgfd7xs7y.jpg":"Chainsaw ",
+            "ry6o40tcz5hrqc12qdne.jpg":"Chainsaw Devil ",
+            "ns5lokuhbyhz0bpa6t7q.jpg":"Makima 💀💀 ",
+            "pb9wxdhnbql0z6yl3bbw.jpg":"Future trucks",
+            "gshdqcrs1ztuk6yxphsf.jpg":"Madara Uchiha",
+            "tlzbj9segbbvjtcjblk8.jpg":"Naruto Shippuden",
+            "asglhbd1cdmpessyiesu.jpg":"Chainsaw Man Poster",
+    
+ 
+
+            "qxbkdlzwtrb6eywsfaf9.jpg":"aesthetic",
+            "vzxflzss49htiet3csjs.jpg":"fedf",
+            "cyqoxeee2hylhl3zx8zh.jpg":"AOT S1 Poster",
+            "ep0ym7hv9dnruwc5m3p5.jpg":"Yelena Famous Pose",
+            "dnldpja6yjrvojvnlnqh.jpg":"AOT",
+
+            "urf474jqm5qjwxxx79hj.png":"serty",
+            "rtw6vqskq6dw3osximx7.jpg":"Mai San",
+            "epjef8xlympryz6kjf3l.png":"#kimetsu-no-yaiba",
+            "ogsermobykguinp0r6ds.jpg":"02",
+            "chblnstwzv5ivn4qk8s8.jpg":"Ryuk",
+
+            "rnrdfhbqkhh5zkpnf66z.jpg":"Black Pattern",
+            "nlnn0ixe8cuni2hvbwxh.jpg":"SPY X FAMILY",
+            "p0dufvtmnul72m5a3xh4.jpg":"Pixelated Supra",
+            "ofzhmi6erzsqdeagscfn.jpg":"Aki KON !!",
+            "nbl4fwphvdrrkvbinlax.jpg":"Yuji Itadori",
+    
+
+
+
+
+
+
+
+
+            }
+ %}
+
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 text-center">
+        <img src="https://res.cloudinary.com/kunalserver/image/upload/v1683018145/{{imagename}}" class="rmimg mt-2 mb-5" alt="" />
+      </div>
+  
+      <div class="col-lg-6 text-center ">
+          <div class="ssttiicckkyy">
+  
+  
+        <h1>{{arr[imagename]}}</h1>
+        
+        <a
+          href="https://res.cloudinary.com/kunalserver/image/upload/v1683018145/{{imagename}}"
+          class="btn btn-outline-primary mt-3"
+          target="_blank"
+          >View in Full Screen</a
+        >
+        <br />
+        <button
+          class="btn btn-success mt-3 roundbtn"
+          onclick='copyText1("https://res.cloudinary.com/kunalserver/image/upload/{{imagename}}","{{arr[imagename]}}")'
+        >
+          <i class="fa-solid fa-file-arrow-down fs-2"></i>
+        </button>
+        <script>
+          function copyText1(url, title) {
+            let imgpath = url;
+            let filename = title;
+  
+            if (saveAs(imgpath, filename)) {
+              alert("Pin Downloaded");
+            }
+          }
+          function getFileName(str) {
+            return str.substring(str.lastIndexOf("/") + 1);
+          }
+          // console.log("Makima 💀💀")
+        </script>
+  
+        <h5 class="mt-2">Pin By - admin</h5>
+        <div class="commentdiv mt-3 text-center">
+          <div class="dlikeiv">
+            <h4>1</h4>
+            <form action="/LikePin/23" method="post">
+              <input type="hidden" name="csrfmiddlewaretoken" value="fBquGSHLuhoClt2laRfnUgWDwEYBKE0dUnVkcF27UaBLWzx7VKiu84DiqcIAa7em">
+              <button
+                type="submit"
+                name="pin_id"
+                value="23"
+                class="btn fs-2"
+              >
+                
+                <i class="fa-regular fa-heart" style="color: #ff0000"></i>
+                
+              </button>
+              <div></div>
+            </form>
+          </div>
+  
+          <form action="/CommentBox" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="fBquGSHLuhoClt2laRfnUgWDwEYBKE0dUnVkcF27UaBLWzx7VKiu84DiqcIAa7em">
+            <input type="text" name="postid" id="postid" value="" hidden />
+            <input
+              type="text"
+              name="comment"
+              class="form-control w-50 cbi"
+              placeholder="Comment Here"
+              id=""
+              required
+            />
+            <input type="text" name="profileid" id="comment_by" value="" hidden />
+            
+          </form>
+          <script>
+            document.getElementById("postid").value = "23";
+            document.getElementById("comment_by").value = "None";
+          </script>
+  
+          <br />
+  
+          
+          <h6 class="mt-2">Be first one to comment</h6>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+          </div>
+  
+
+{%endblock%}

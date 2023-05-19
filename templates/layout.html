@@ -1,0 +1,111 @@
+{% extends "index.html"%}
+{% block body %}
+
+{% set arr = [
+    {'etjsxlg44dqbfuudwnhf.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/etjsxlg44dqbfuudwnhf.jpg'},
+    {'gpncqqh99wqrfs8ecm4u.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/gpncqqh99wqrfs8ecm4u.jpg'},
+    {'nszcs0fvlhobyxxstza2.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/nszcs0fvlhobyxxstza2.jpg'},
+    {'ua7ddxbeos2efs3mbnw5.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ua7ddxbeos2efs3mbnw5.jpg'},
+    {'ow9rwlk2illzbv8fyisb.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ow9rwlk2illzbv8fyisb.jpg'},
+    {'hdu0bxkfojwj2adrgwz9.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/hdu0bxkfojwj2adrgwz9.jpg'},
+    {'iabigseptso04nidbhcs.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/iabigseptso04nidbhcs.jpg'},
+    {'dwqzypswjb3eqcn3sexh.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/dwqzypswjb3eqcn3sexh.jpg'},
+    {'ssywhtcs5qwe2fkpur61.gif' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ssywhtcs5qwe2fkpur61.gif'},
+    {'ywbs9p6qv7lhmix7vwbq.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ywbs9p6qv7lhmix7vwbq.jpg'},
+    {'u51fufukydvoxmxzxm1o.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/u51fufukydvoxmxzxm1o.jpg'},
+    {'kjs9rd8vyicf7fverm06.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/kjs9rd8vyicf7fverm06.jpg'},
+    {'tii1ku2eh192s0tdbmv8.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/tii1ku2eh192s0tdbmv8.jpg'},
+    {'pnybzaiij7wpgf3ipxg1.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/pnybzaiij7wpgf3ipxg1.jpg'},
+    {'nbvvf4eflb8p6ojbflh2.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/nbvvf4eflb8p6ojbflh2.jpg'},
+
+    {'n2tp0wpv5q7tgfd7xs7y.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/n2tp0wpv5q7tgfd7xs7y.jpg'},
+    {'ry6o40tcz5hrqc12qdne.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ry6o40tcz5hrqc12qdne.jpg'},
+    {'ns5lokuhbyhz0bpa6t7q.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ns5lokuhbyhz0bpa6t7q.jpg'},
+    {'pb9wxdhnbql0z6yl3bbw.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/pb9wxdhnbql0z6yl3bbw.jpg'},
+    {'gshdqcrs1ztuk6yxphsf.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/gshdqcrs1ztuk6yxphsf.jpg'},
+    {'tlzbj9segbbvjtcjblk8.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/tlzbj9segbbvjtcjblk8.jpg'},
+    {'asglhbd1cdmpessyiesu.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/asglhbd1cdmpessyiesu.jpg'},
+    
+ 
+
+    {'qxbkdlzwtrb6eywsfaf9.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/qxbkdlzwtrb6eywsfaf9.jpg'},
+    {'vzxflzss49htiet3csjs.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/vzxflzss49htiet3csjs.jpg'},
+    {'cyqoxeee2hylhl3zx8zh.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/cyqoxeee2hylhl3zx8zh.jpg'},
+    {'ep0ym7hv9dnruwc5m3p5.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ep0ym7hv9dnruwc5m3p5.jpg'},
+    {'dnldpja6yjrvojvnlnqh.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/dnldpja6yjrvojvnlnqh.jpg'},
+
+    {'urf474jqm5qjwxxx79hj.png' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/urf474jqm5qjwxxx79hj.png'},
+    {'rtw6vqskq6dw3osximx7.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/rtw6vqskq6dw3osximx7.jpg'},
+    {'epjef8xlympryz6kjf3l.png' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/epjef8xlympryz6kjf3l.png'},
+    {'ogsermobykguinp0r6ds.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ogsermobykguinp0r6ds.jpg'},
+    {'chblnstwzv5ivn4qk8s8.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/chblnstwzv5ivn4qk8s8.jpg'},
+
+    {'rnrdfhbqkhh5zkpnf66z.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/rnrdfhbqkhh5zkpnf66z.jpg'},
+    {'nlnn0ixe8cuni2hvbwxh.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/nlnn0ixe8cuni2hvbwxh.jpg'},
+    {'p0dufvtmnul72m5a3xh4.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/p0dufvtmnul72m5a3xh4.jpg'},
+    {'ofzhmi6erzsqdeagscfn.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/ofzhmi6erzsqdeagscfn.jpg'},
+    {'nbl4fwphvdrrkvbinlax.jpg' : 'https://res.cloudinary.com/kunalserver/image/upload/v1671431207/nbl4fwphvdrrkvbinlax.jpg'},
+    
+ 
+
+
+
+    
+
+] %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4 text-center">
+        <form action="/search" method="post">
+          <input type="hidden" name="csrfmiddlewaretoken"
+            value="fejO3JAuR1FV9a4LJ3gUrsAH3YSKhCYFU0OEzwVQhUS4KgzxuWj1FghmXwCJH5cO">
+          <input type="text" name="searchinp" placeholder="Type to search... " class="form-control w-75 searchinpbox
+         ">
+          <div class="text-center mt-2">
+            <button type="submit" class="btn btn-outline-success btn-sm"><a class="nav-link"
+                href="/">Search</a></button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+
+    <div class="grid mt-4">
+
+        {% for item in arr %}
+            {% for key, value in item.items() %}
+                <div class="item photo">
+                    <div class="content">
+                    <a href="/getimage/{{key}}">
+                        <img src="{{ value }}"
+                        class="pinn col-sm-6 col-lg-12 col-md-4 " alt="" srcset="" />
+                    </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+      
+
+     
+
+     
+
+    
+
+
+     
+ 
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+{%endblock%}

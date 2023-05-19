@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  
+{% block head %}
+
+{% endblock %}
+</head>
+
+<body>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/login">Login</a>
+    </li>
+
+  </ul>
+
+ 
+  {% block body %}   {% endblock %}
+
+
+
+
+
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script>
+    function resizeGridItem(item) {
+      grid = document.getElementsByClassName("grid")[0];
+      rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+      rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+      rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+      item.style.gridRowEnd = "span " + rowSpan;
+    }
+
+    function resizeAllGridItems() {
+      allItems = document.getElementsByClassName("item");
+      for (x = 0; x < allItems.length; x++) {
+        resizeGridItem(allItems[x]);
+      }
+    }
+
+    window.onload = resizeAllGridItems();
+    window.addEventListener("resize", resizeAllGridItems);
+    allItems = document.getElementsByClassName("item");
+    for (x = 0; x < allItems.length; x++) {
+      imagesLoaded(allItems[x], resizeInstance);
+    }
+    function resizeInstance(instance) {
+      item = instance.elements[0];
+      resizeGridItem(item);
+    }
+    let images = document.querySelectorAll('.item');
+
+images.forEach(function(image) {
+  image.addEventListener('click', function(event) {
+    console.log(event.target); // event.target refers to the clicked image element
+  });
+});
+
+
+
+  </script>
+
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Pins</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/add_pin" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="csrfmiddlewaretoken"
+              value="YiFz74LAhz1S2JY6mVzFHkgcCwtTeDrKD4apDR6WHse1DPtS7OCMV8XRw4dSE6FT">
+            <div class="form-group">
+              <label for="">Pin*</label>
+              <input type="file" name="Pin" class="form-control" id="" />
+              <label for="">Title*</label>
+              <input type="text" name="Title" class="form-control" id="" />
+              <label for="">Description*</label>
+              <textarea name="Description" class="form-control" id=""></textarea>
+              <br />
+              <button type="submit" class="btn btn-success">Add</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+{% extends "index.html"%}
+{% block body %}
+
+<div class="container forms">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4">
+      <div class="form-group login-form">
+        <h2 class="text-success">Login</h2>
+        <form action="/" method="post">
+          <input type="hidden" name="csrfmiddlewaretoken" value="i1GF3auVLjghAs8Bj5rJ2tbHwqtrF459XNbvzXPhbctqbyDn4YuQghSmqYdq5xji">
+          <label for="">Username</label>
+          <input type="text" name="username" class="form-control" id="" />
+          <label for="">Password</label>
+          <input type="password" name="password" class="form-control" id="" />
+          <br />
+          <button type="submit" class="btn btn-outline-primary" ><a class="nav-link" href="/login">Login</a></button>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4">
+      <div class="form-group signup-form">
+        <h2 class="text-primary">Signup</h2>
+        <form action="/signup" method="post">
+          <input type="hidden" name="csrfmiddlewaretoken" value="i1GF3auVLjghAs8Bj5rJ2tbHwqtrF459XNbvzXPhbctqbyDn4YuQghSmqYdq5xji">
+          <label for="">Username</label>
+          <input type="text" name="username" class="form-control" id="" />
+          <label for="">Email</label>
+          <input type="text" name="email" class="form-control" id="" />
+          <label for="">Password</label>
+          <input type="password" name="password" class="form-control" id="" />
+          <label for="">Confirm Password</label>
+          <input type="password" name="password2" class="form-control" id="" />
+          <br />
+          <button type="submit" class="btn btn-outline-success"><a class="nav-link" href="/login">Signup></a></button>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
+
+
+
+
+
+
+    <!-- Button trigger modal -->
+    
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="signup"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Pins</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="/add_pin" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="csrfmiddlewaretoken" value="i1GF3auVLjghAs8Bj5rJ2tbHwqtrF459XNbvzXPhbctqbyDn4YuQghSmqYdq5xji">
+              <div class="form-group">
+                <label for="">Pin*</label>
+                <input type="file" name="Pin" class="form-control" id="" />
+                <label for="">Title*</label>
+                <input type="text" name="Title" class="form-control" id="" />
+                <label for="">Description*</label>
+                <textarea
+                  name="Description"
+                  class="form-control"
+                  id=""
+                ></textarea>
+                <br />
+                <button type="submit" class="btn btn-success">Add</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    {% endblock %}
